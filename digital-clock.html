@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Digital Clock</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript">
+            
+            function clock(){
+                var today=new Date();
+                var h=today.getHours();
+                var m=today.getMinutes();
+                var s=today.getSeconds();
+                var ms=today.getMilliseconds();
+                var flag="AM";
+                
+                if(h==12){
+                    h=12;
+                    flag="PM";
+                }  
+                if(h>12){
+                    h=h-12;
+                    flag="PM";
+                }
+                if(h==0){
+                    h=12;
+                }
+                
+                if(h<10){
+                    h="0"+h;
+                }
+                if(m<10){
+                    m="0"+m;
+                }
+                if(s<10){
+                    s="0"+s;
+                }
+                if(ms<10){
+                    ms="00"+ms;
+                }
+                if(ms>=10&&ms<100){
+                    ms="0"+ms;
+                }
+                document.getElementById("flag").innerHTML=flag;
+                document.getElementById("clock").innerHTML=h+" : "+m+" : "+s+" : "+ms;
+                setTimeout("clock()", 1);
+            }
+        </script>
+    </head>
+    <body onload="clock()">
+        <span>The Time is:</span><br/>
+        <span id="flag" style="font-size: 50px;font-weight: bold;"></span>
+        <span id="clock" style="font-size: 100px;color: #0099FF;font-weight: bold;"></span>
+    </body>
+</html>

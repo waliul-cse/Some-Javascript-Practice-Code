@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript">
+            
+            function entryNames(){
+                var names=new Array();
+                var i=0,j;
+                
+                do{
+                    var input=prompt("Enter Student Name:");
+                    if(input!=""&&input!=null){
+                        names[i]=input;
+                        i++;
+                    }
+                }while(input!=null);
+                
+                if(i!=0){
+                document.write("The entered names are:<br/>");
+                }else{
+                  document.write("You didn't entered any name.");  
+                }
+                for(j in names){
+                    document.write(names[j]+"<br/>");
+                }
+                if(i!=0){
+                document.write("<br/>The total number of student is: "+i);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <input type="button" value="Entry Names" onclick="entryNames()">
+        </div>
+    </body>
+</html>

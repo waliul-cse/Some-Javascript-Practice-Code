@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript">
+           
+            function alertBox(){
+                document.getElementById("out").innerHTML="";
+                alert("Hello, JavaScript!");
+            }
+                
+            function promptBox(){
+                document.getElementById("out").innerHTML="";
+                var input=prompt("What's your name?");
+   
+                if(input!="" && input!=null){
+                    document.getElementById("out").innerHTML="Hello, "+input+" !";
+                }else{
+                    document.getElementById("out").innerHTML="Ops! You didn't enter your name.";  
+                }
+            }
+                
+            function confirmBox(){ 
+                document.getElementById("out").innerHTML="";
+                var input=confirm("Do you agree?");
+                    
+                if(input){
+                    document.getElementById("out").innerHTML="You agreed, Thanks!";
+                }else{
+                    document.getElementById("out").innerHTML="You didn't agree.";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <input type="button" value="Alert Box" onclick="alertBox()"/>
+            <input type="button" value="Prompt Box" onclick="promptBox()"/>
+            <input type="button" value="Confirm Box" onclick="confirmBox()"/><br/><br/>
+            <span id="out"></span>
+        </div>
+    </body>
+</html>

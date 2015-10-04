@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript">
+          
+            function validate(){
+                var form=document.forms["signup"];
+                var name=form["name"].value;
+                var username=form["username"].value;
+                var password=form["password"].value;
+                var repassword=form["repassword"].value;
+                var agreement=form["agreement"];
+                var error="";
+                
+                if (name==null || name==""){
+                    error=error+"Name must be filled out.\n"
+                }
+                if (username==null || username==""){
+                    error=error+"Username must be filled out.\n"
+                }
+                if (password==null || password==""){
+                    error=error+"Password must be filled out.\n"
+                }
+                if (repassword==null || repassword==""){
+                    error=error+"Password must be re-entered.\n"
+                }else if(repassword!=password){
+                    error=error+"The re-entered password didn't match.\n"
+                }
+                if (!agreement.checked){
+                    error=error+"Agreement must be checked out.\n"
+                }
+                
+                if(error!=""){
+                    alert(error);
+                    return false;
+                }else{
+                    var content="<table border='1' style='text-align: center'>"+
+                        "<tr><th>Name</th><th>Username</th><th>Password</th></tr>"+
+                        "<tr><td>"+name+"</td><td>"+username+"</td><td>"+password+"</td></tr></table>";
+                    var newWin=window.open("", "", "width=300,height=200,scrollbars=yes");
+                    newWin.document.write(content);
+                    return true;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <form onsubmit="return validate()" action="" method="post" name="signup">
+                <input type="text" name="name" placeholder="Name"/><br/>
+                <input type="text" name="username" placeholder="User Name"/><br/>
+                <input type="password" name="password" placeholder="New Password"/><br/>
+                <input type="password" name="repassword" placeholder="Re-enter Password"/><br/>
+                <input type="checkbox" id="agreementChBx" name="agreement" style="margin-bottom: 1em"/> <label for="agreementChBx">I agree the <a href="" target="_blank">Terms &AMP; Conditions</a></label><br/>
+                <input type="submit" name="submit" value="Sign Up" style="width: 5em;">
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript">
+  
+            function currencyConverter(cur){
+                var amount;
+                if(cur=="usd"){
+                    amount=parseFloat(document.getElementById("bdt").value)*0.0123;
+                }else if(cur=="gbp"){
+                    amount=parseFloat(document.getElementById("bdt").value)*0.0077;
+                }else{
+                    amount=parseFloat(document.getElementById("bdt").value)*0.0451;
+                }
+                
+                if(!isNaN(amount)){
+                    alert("The equivalent "+cur.toUpperCase()+": "+amount);
+                }else{
+                    alert("Error! enter numeric values.");
+                }
+                document.getElementById(cur).checked=false;
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            Enter amount in BDT: <input type="text" id="bdt" /><br/>
+            <input type="radio" id="usd" name="cur" onchange="currencyConverter('usd')"/><label for="usd">US Dollar (USD)</label>
+            <input type="radio" id="gbp" name="cur" onchange="currencyConverter('gbp')"/><label for="gbp">British Pound (GBP)</label>
+            <input type="radio" id="aed" name="cur" onchange="currencyConverter('aed')"/><label for="aed">UAE Dirham (AED)</label>
+        </div>
+    </body>
+</html>

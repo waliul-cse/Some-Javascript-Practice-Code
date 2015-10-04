@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript">
+        
+            var array=new Array();
+            function getID(ID){
+                var selected="";
+                
+                if(document.getElementById(ID).checked){
+                    array.push(ID);  
+                    for(i in array){
+                        selected=selected+" "+array[i];
+                    }
+                    
+                    document.getElementById("msg").innerHTML="The selected ID(s) are: ";
+                    document.getElementById("showIDs").innerHTML=selected;
+                }else{
+                    array.splice(array.indexOf(ID), 1);
+                    
+                    if(array.length==0){
+                        document.getElementById("msg").innerHTML="You didn't select any ID";
+                    }else{
+                        for(i in array){
+                            selected=selected+" "+array[i];
+                        }    
+                    }
+                    
+                    document.getElementById("showIDs").innerHTML=selected;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            Select an Student ID:
+            <input type="checkbox" id="10001" onchange="getID('10001')"/><label for="10001">10001</label>
+            <input type="checkbox" id="10002" onchange="getID('10002')"/><label for="10002">10002</label>
+            <input type="checkbox" id="10003" onchange="getID('10003')"/><label for="10003">10003</label>
+            <input type="checkbox" id="10004" onchange="getID('10004')"/><label for="10004">10004</label>
+            <input type="checkbox" id="10005" onchange="getID('10005')"/><label for="10005">10005</label>
+        </div><br/>
+        <span id="msg">You didn't select any ID</span>
+        <span id="showIDs"></span>
+    </body>
+</html>

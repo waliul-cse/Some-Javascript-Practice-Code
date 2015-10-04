@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript">
+            
+            function change_bg(color){
+                var page_bg=document.getElementById("page").style;
+                
+                if(color=="#FF0000"){
+                    page_bg.backgroundColor=color;
+                }
+                if(color=="#00FF00"){
+                    page_bg.backgroundColor=color;
+                }
+                if(color=="#0000FF"){
+                    page_bg.backgroundColor=color;
+                }
+            }
+        </script>
+    </head>
+    <body id="page">
+        Change Page Background to: 
+        <input type="button" value="Red" onclick="change_bg('#FF0000')"/>
+        <input type="button" value="Green" onclick="change_bg('#00FF00')"/>
+        <input type="button" value="Blue" onclick="change_bg('#0000FF')"/>
+    </body>
+</html>

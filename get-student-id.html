@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript">
+            
+            function get_id(){
+                document.getElementById("std_id").innerHTML="1000"+document.getElementById("std_name").value;
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            Select a student:
+            <select id="std_name">
+                <option value="1">Aminul</option>
+                <option value="2">Sohan</option>
+                <option value="3">Yeamin</option>
+                <option value="4">Ankon</option>
+                <option value="5">Musabbir</option>
+            </select>
+            <input type="button" onclick="get_id()" value="Get ID"/>
+            <br/>
+            Student ID:
+            <span id="std_id"></span>
+        </div>
+    </body>
+</html>
